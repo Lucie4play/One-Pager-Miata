@@ -1,17 +1,217 @@
 * {
     margin:0;
     padding:0;
-    border-spacing : border-box;
+    box-sizing : border-box;
 }
 
 img {
     max-width: 85vw;
 }
 
+section {
+    width: 100%;
+    padding: 80px 0;
+}
+
+.row {
+    max-width: 1200px; /* so breit, wie der centered Content sein soll */
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 /*Root Colors*/
 :root {
     --black: #000000;
     --white: #ffffff;
-    --magenta: #7B2852;
-    --grey: #AEAEAE;
+    --beige: #EFE0CB;
+    --rot: #9D0202;
+}
+
+/*Fonts*/
+.chonburi-regular {
+  font-family: "Chonburi", serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.agdasima-regular {
+  font-family: "Agdasima", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.agdasima-bold {
+  font-family: "Agdasima", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/*Text size*/
+a { 
+    font-family: "Chonburi", serif;
+    font-size: large;
+}
+
+h1 { 
+    font-family: "Chonburi", serif;
+    font-weight: 100;}
+
+h2 { 
+    font-family: "Chonburi", serif;
+    font-weight: 100;}
+
+h3 { 
+    font-family: "Chonburi", serif;
+    font-weight: 100;}
+
+p  { 
+    font-family: "Agdasima", sans-serif; }
+
+
+
+.button {
+font-family: "Agdasima", sans-serif;
+font-size: 30px;
+background-color: var(--rot);
+color:white;
+padding: 10px 20px;
+cursor: pointer;
+
+}    
+/*Navigation*/
+.menu {
+    background-color: var(--beige);
+    box-shadow: 0px 1px 15px rgb(148, 147, 147);
+    width: 100%;
+    z-index: 3;
+    position: sticky;
+    top: 0;
+    padding: 20px 0px;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    overflow: hidden;
+}
+
+ul li a{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 14px 16px;
+    color: black;
+}
+
+ul li a:active{
+text-decoration: underline;
+}
+
+
+
+/*hero section*/
+
+#hero {
+    background-color:#EFE0CB;
+    padding: 40px 0;
+}
+
+.hero_container {
+    display: grid;
+    place-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.hero_text, .hero_miata {
+    grid-area: 1/1;
+}
+
+.hero_text {
+    z-index: 1;
+    text-align: center;
+    width: 100%;
+    transform: translateY(-150px)
+}
+
+.hero_miata{
+    z-index: 2;
+    width:100%;
+    max-width: 1000px;
+    height:auto;
+    margin-bottom:400px;
+    transform: translateY(270px);
+}
+
+.hero_text h3 {
+    font-size: clamp(1rem, 5vw, 3rem);
+    margin: 0;
+    transform: translateX(-2.9em);
+}
+
+.hero_text .miata {
+    font-size: clamp(3rem, 15vw, 10rem);
+    line-height: 0.8;
+    margin: 0;
+    transform: translateX(0.1em);
+}
+
+.hero_text .mx-5 {
+    font-size: clamp(3rem, 15vw, 10rem);
+    line-height: 0.8;
+    margin:0;
+    transform: translateX(1.3em);
+}
+
+/*Info*/
+
+#info {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(img/daniel-salcius-aNnimUjVnGg-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    padding: 0;
+}
+
+#info h2{
+    font-size: 50px;
+}
+
+#info p{
+    font-size: 30px;
+}
+ 
+#info_row{
+    width: 50%;
+    max-width: none;
+    background-color: rgba(0, 0, 0, 0.623) ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.info_text {
+    color: white;
+    padding: 50px 10%;
+}
+
+.wiki {
+margin-top:40px;
+}
+
+@media (max-width:1020px){
+    #info_row{
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.623) ;
+    }
 }
