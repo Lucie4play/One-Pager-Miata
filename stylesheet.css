@@ -270,10 +270,10 @@ text-decoration-thickness: 3px;
 
 #info {
     width: 100%;
-    min-height: 100vh;
+    min-height: 80vh;
     background-image: url(img/daniel-salcius-aNnimUjVnGg-unsplash.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     display: flex;
     padding: 0;
 }
@@ -293,7 +293,7 @@ text-decoration-thickness: 3px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 80vh;
     margin: 0;
 }
 
@@ -407,7 +407,11 @@ margin-top:40px;
     gap: 10px;
 }
 
-@media screen and (max-width: 600px) {
+.content p {
+    font-size: 20px;
+}
+
+@media screen and (max-width: 820px) {
   .versions-timeline::after {
     left: 31px;
   }
@@ -571,14 +575,84 @@ margin-top:40px;
 
 /* Button Galerie*/
 .insta {
-	font-size: 10px;
+	font-size: 13px;
 background-color: white;
 color:#900000;
-padding: 10px 20px;
+padding: 10px 10px;
 margin-top:30px;
 display: inline-block;
 cursor: pointer;
 }  
+
+/*Treff Animation*/
+
+#treff {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 10px 0 !important;
+}
+
+.title-treff {
+    margin: 10px 0 !important;
+}
+
+.carousel {
+margin: 0;
+width: 100%;
+display:flex;
+overflow: hidden;
+}
+
+.carousel::-webkit-scrollbar {
+	display:none;
+}
+
+.group{
+display:flex;
+align-items:center;
+justify-content: flex-start;
+gap: 3em;
+animation: spin 35s Infinite linear;
+padding-right:3em;
+flex-shrink: 0;
+width: max-content;
+will-change: transform;
+}
+
+.card1 {
+flex: 0 0 10em;
+	height: 10em;
+	padding: 1em;
+	align-content:center;
+}
+
+@keyframes spin {
+	0% { transform:translatex(0)}
+	100% {transform: translateX(-100%)}
+}
+
+.sizing {
+	width:100%;
+	height: 100%;
+	object-fit: contain;
+	display:block;
+}
+
+@media (max-width:787px){
+	.card1 {
+		flex: 0 0 6em;
+height: 10em;
+}
+	
+	
+	.sizing{
+	width:100%;
+	height: 100%;
+	object-fit: contain;
+	display:block;
+}
+	}
+
 
 /*footer*/
 
