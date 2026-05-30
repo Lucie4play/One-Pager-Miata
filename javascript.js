@@ -1,3 +1,4 @@
+/*Darkmode Button*/
 const toggleBtn = document.getElementById('dark-mode-toggle');
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
