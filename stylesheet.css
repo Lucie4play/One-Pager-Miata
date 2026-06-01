@@ -19,6 +19,126 @@ html {
     --box-shadow: rgba(0, 0, 0, 0.4);
     --bg-stripes: rgba(218, 190, 150, 0.164);
 }
+
+
+/*Darkmode Button*/
+/*System-Darkmode*/
+@media (prefers-color-scheme: dark) {
+    body:not(.light-mode) {
+        --beige: #1a1a1a;
+        --black: #EFE0CB;
+        --white: #121212;
+        --shadow: rgba(0, 0, 0, 0.8);
+    }
+
+    body:not(.light-mode) section {
+        color: var(--black);
+    }
+
+    body:not(.light-mode) .headlight {
+        height: 18px;
+        top: -10px;
+        background-color: #333;
+        border-radius: 5px 5px 0 0;
+        box-shadow: 0 -5px 15px rgba(255, 255, 255, 0.9);
+    }
+
+    body:not(.light-mode) .headlight::after {
+        opacity: 1;
+    }
+}
+
+/*Manueller Darkmode*/
+body.dark-mode {
+    --beige: #1a1a1a;
+    --black: #EFE0CB;
+    --white: #121212;
+    --shadow: rgba(0, 0, 0, 0.8);
+    --bg-stripes: rgba(218, 190, 150, 0.027);
+}
+
+/*System-Darkmode*/
+@media (prefers-color-scheme: dark) {
+    body:not(.light-mode) #info .info_text {
+        color: #ffffff;
+    }
+}
+
+/*Manueller Darkmode (Button)*/
+body.dark-mode #info .info_text {
+    color: #ffffff;
+}
+
+body.dark-mode section {
+    color: var(--black);
+}
+
+body.dark-mode .headlight {
+    height: 18px;
+    top: -10px;
+    background-color: #333;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 -5px 15px rgba(255, 255, 255, 0.9);
+}
+
+body.dark-mode .headlight::after {
+    opacity: 1;
+}
+
+/*Miata Button Styling */
+.miata-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 100;
+    padding: 10px;
+}
+
+.miata-body {
+    width: 90px;
+    height: 38px;
+    background-color: var(--rot);
+    border-radius: 15px 15px 8px 8px;
+    position: relative;
+    box-shadow: 0px 6px 12px var(--box-shadow);
+}
+
+.headlight {
+    width: 22px;
+    height: 6px;
+    background-color: #222;
+    position: absolute;
+    top: 8px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headlight.left {
+    left: 12px;
+}
+
+.headlight.right {
+    right: 12px;
+}
+
+.headlight::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 4px rgba(255, 255, 255, 0.9);
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/*general settings*/
  
 body, section, .menu, .card, .content {
     transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
@@ -106,6 +226,7 @@ p {
     font-family: "Ubuntu", sans-serif;
 }
 
+/* Button styling*/
 
 .button {
     font-family: "Ubuntu", sans-serif;
@@ -124,12 +245,12 @@ p {
 /*Navigation*/
 .menu {
     background-color: var(--beige);
-    box-shadow: 0px 1px 10px var(--shadow);
+    box-shadow: 0 1px 10px var(--shadow);
     width: 100%;
     z-index: 3;
     position: sticky;
     top: 0;
-    padding: 5px 0px;
+    padding: 5px 0;
 }
 
 ul {
@@ -329,8 +450,7 @@ ul li a:hover {
     justify-content: flex-start;
     min-height: auto;
     margin: 0;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
+    padding: 2vh 0;
 
 }
 
@@ -582,10 +702,6 @@ ul li a:hover {
 
 /*Galerie*/
 
-/*#galerie {
-    padding-top: 50px;
-}*/
-
 #galerie {
     background-image: repeating-linear-gradient(
         45deg,
@@ -595,7 +711,7 @@ ul li a:hover {
         var(--bg-stripes) 60px
     );
     background-size: 200% 200%;
-    background-position: 0% 0%;
+    background-position: 0 0;
     padding-top: 50px;
 }
 
@@ -684,7 +800,7 @@ ul li a:hover {
     font-size: 13px;
     background-color: white;
     color: var(--rot);
-    padding: 10px 10px;
+    padding: 10px;
     margin-top: 30px;
     display: inline-block;
     cursor: pointer;
@@ -793,127 +909,9 @@ footer p{
 
 footer img {
     max-height: 40px !important;
-    margin: 10px 10px;
+    margin: 10px;
 }
 
-}
-
-
-/*Darkmode Button*/
-/*System-Darkmode*/
-@media (prefers-color-scheme: dark) {
-    body:not(.light-mode) {
-        --beige: #1a1a1a;
-        --black: #EFE0CB;
-        --white: #121212;
-        --shadow: rgba(0, 0, 0, 0.8);
-    }
-
-    body:not(.light-mode) section {
-        color: var(--black);
-    }
-
-    body:not(.light-mode) .headlight {
-        height: 18px;
-        top: -10px;
-        background-color: #333;
-        border-radius: 5px 5px 0 0;
-        box-shadow: 0 -5px 15px rgba(255, 255, 255, 0.9);
-    }
-
-    body:not(.light-mode) .headlight::after {
-        opacity: 1;
-    }
-}
-
-/*Manueller Darkmode*/
-body.dark-mode {
-    --beige: #1a1a1a;
-    --black: #EFE0CB;
-    --white: #121212;
-    --shadow: rgba(0, 0, 0, 0.8);
-    --bg-stripes: rgba(218, 190, 150, 0.027);
-}
-
-/*System-Darkmode*/
-@media (prefers-color-scheme: dark) {
-    body:not(.light-mode) #info .info_text {
-        color: #ffffff;
-    }
-}
-
-/*Manueller Darkmode (Button)*/
-body.dark-mode #info .info_text {
-    color: #ffffff;
-}
-
-body.dark-mode section {
-    color: var(--black);
-}
-
-body.dark-mode .headlight {
-    height: 18px;
-    top: -10px;
-    background-color: #333;
-    border-radius: 5px 5px 0 0;
-    box-shadow: 0 -5px 15px rgba(255, 255, 255, 0.9);
-}
-
-body.dark-mode .headlight::after {
-    opacity: 1;
-}
-
-/*Miata Button Styling */
-.miata-toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 100;
-    padding: 10px;
-}
-
-.miata-body {
-    width: 90px;
-    height: 38px;
-    background-color: var(--rot);
-    border-radius: 15px 15px 8px 8px;
-    position: relative;
-    box-shadow: 0px 6px 12px var(--box-shadow);
-}
-
-.headlight {
-    width: 22px;
-    height: 6px;
-    background-color: #222;
-    position: absolute;
-    top: 8px;
-    transition: all 0.3s ease-in-out;
-    border-radius: 3px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.headlight.left {
-    left: 12px;
-}
-
-.headlight.right {
-    right: 12px;
-}
-
-.headlight::after {
-    content: '';
-    width: 12px;
-    height: 12px;
-    background-color: #fff;
-    border-radius: 50%;
-    box-shadow: 0 0 10px 4px rgba(255, 255, 255, 0.9);
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
 }
 
 /*Impressum*/
@@ -950,11 +948,11 @@ padding: 0 20px;
     margin: 15px 0;
 }
 
-#impressum a:visited {
+#impressum-link a:visited {
 color: var(--rot);
 }
 
-#impressum a:link {
+#impressum-link a:link {
 color: var(--dunkelrot);
 }
 
